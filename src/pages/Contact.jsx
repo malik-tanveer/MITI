@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Users, Github } from "lucide-react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser"; // make sure this is installed
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -59,20 +59,21 @@ export default function Contact() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="py-24 min-h-screen bg-gradient-to-b from-black via-slate-900 to-black text-gray-300 px-4"
+      className="py-24 pt-24 bg-gradient-to-b from-black via-slate-900 to-black text-gray-300 px-4"
     >
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="max-w-6xl mx-auto space-y-12 py-20">
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-3">Contact MITI</h1>
-          <p className="text-gray-400 text-lg md:text-xl">
+          <h1 className="text-4xl font-bold text-white mb-3">Contact Us</h1>
+          <p className="text-gray-400 text-lg md:text-xl max-w-xl mx-auto">
             Connect with MITI or the developers for inquiries, feedback, or support.
             Explore our Data Tool, Chatbot, and other innovative projects.
           </p>
         </motion.div>
 
+
         {/* Grid: Info + Form */}
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 py-10">
           {/* Left: Info */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="space-y-4">
@@ -91,59 +92,33 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-
               <div className="flex items-center gap-4">
                 <Mail className="w-6 h-6 text-indigo-400" />
                 <span>info@wmomiti.com</span>
               </div>
             </div>
-
             {/* Team */}
             <div className="space-y-4">
               <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                <Users className="w-6 h-6 text-indigo-400" /> Our Team
-              </h2>
+                <Users className="w-6 h-6 text-indigo-400" /> Our Team </h2>
               <ul className="space-y-2 text-gray-300">
                 <li>
-                  <strong>Tanveer:</strong> Developed the professional Landing Page & Chatbot
-                </li>
-                <li>
-                  <strong>Maroof:</strong> Built the Data Tool, CSV visualization & analysis
-                </li>
+                  <strong>Tanveer:</strong> Developed the professional Landing Page & Chatbot </li>
+                <li> <strong>Maroof:</strong> Built the Data Tool, CSV visualization & analysis </li>
               </ul>
-
               <div className="flex gap-4 mt-4">
-                <a
-                  href="https://github.com/malik-tanveer"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-1 text-gray-300 hover:text-indigo-400 transition"
-                >
-                  <Github className="w-5 h-5" /> Tanveer GitHub
-                </a>
-                <a
-                  href="https://github.com/maroofiums"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-1 text-gray-300 hover:text-indigo-400 transition"
-                >
-                  <Github className="w-5 h-5" /> Maroof GitHub
-                </a>
+                <a href="https://github.com/malik-tanveer" target="_blank" rel="noreferrer" className="flex items-center gap-1 text-gray-300 hover:text-indigo-400 transition" >
+                  <Github className="w-5 h-5" /> Tanveer GitHub </a>
+                <a href="https://github.com/maroofiums" target="_blank" rel="noreferrer" className="flex items-center gap-1 text-gray-300 hover:text-indigo-400 transition" >
+                  <Github className="w-5 h-5" /> Maroof GitHub </a>
               </div>
             </div>
-
-            <p className="text-gray-400 mt-6">
-              MITI offers professional projects and innovative tools for learning.
-              Explore our Data Tool for interactive CSV visualization,
-              use the Chatbot for assistance, and navigate our Landing Page to discover all resources.
-            </p>
           </motion.div>
-
           {/* Right: Form */}
           <motion.form
             variants={itemVariants}
             onSubmit={handleSubmit}
-            className="flex flex-col gap-4 bg-slate-900/70 backdrop-blur-md p-6 rounded-xl border border-slate-800 shadow-lg"
+            className="flex flex-col gap-6 bg-slate-900/70 backdrop-blur-md p-8 rounded-2xl border border-slate-700 shadow-xl max-w-lg "
           >
             <input
               type="text"
@@ -151,38 +126,42 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your Name"
-              className="bg-transparent text-white px-2 py-2 border-b border-slate-600 focus:border-indigo-400 focus:outline-none transition duration-300 placeholder-gray-400 w-full"
+              className="bg-transparent text-white px-4 py-3 border-b border-slate-600 focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 focus:outline-none transition-all duration-300 rounded placeholder-gray-400 w-full"
               required
             />
+
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="Your Email"
-              className="bg-transparent text-white px-2 py-2 border-b border-slate-600 focus:border-indigo-400 focus:outline-none transition duration-300 placeholder-gray-400 w-full"
+              className="bg-transparent text-white px-4 py-3 border-b border-slate-600 focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 focus:outline-none transition-all duration-300 rounded placeholder-gray-400 w-full"
               required
             />
+
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
               placeholder="Your Message"
-              rows={5}
-              className="bg-transparent text-white px-2 py-2 border-b border-slate-600 focus:border-indigo-400 focus:outline-none transition duration-300 placeholder-gray-400 resize-none w-full"
+              rows={6}
+              className="bg-transparent text-white px-4 py-3 border-b border-slate-600 focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 focus:outline-none transition-all duration-300 rounded placeholder-gray-400 resize-none w-full"
               required
             />
+
             <button
               type="submit"
-              className="bg-indigo-500 hover:bg-indigo-600 transition text-white py-2 rounded-lg font-semibold w-full"
+              className="bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 transition-all duration-300 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-lg w-full"
             >
               Send Message
             </button>
           </motion.form>
+
         </div>
 
         {/* Map */}
-        <motion.div variants={itemVariants} className="mt-12 rounded-xl overflow-hidden border border-slate-800 shadow-md">
+        <motion.div variants={itemVariants} className="mt-20 rounded-xl overflow-hidden border border-slate-800 shadow-md">
           <iframe
             title="MITI Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.8643198216378!2d67.16369879999999!3d24.8343132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33a5da6ee528f%3A0xac1e45b1a541fe8c!2sMemon%20Industrial%20%26%20Technical%20Institute!5e0!3m2!1sen!2s!4v1764238870631!5m2!1sen!2s"
@@ -196,3 +175,4 @@ export default function Contact() {
     </motion.div>
   );
 }
+
