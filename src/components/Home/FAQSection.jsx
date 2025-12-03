@@ -29,12 +29,8 @@ const faqData = [
         question: "How do I apply ML models on my dataset?",
         answer:
           "Select your target column, split the data into train/test sets automatically, and view predictions and accuracy metrics."
-      }
-    ]
-  },
-  {
-    faqs: [
-      {
+      },
+            {
         question: "How does the Chatbot help me?",
         answer:
           "Our AI Chatbot guides you step-by-step, answers questions about data, ML, visualizations, or website features, and provides suggestions instantly."
@@ -50,12 +46,12 @@ const faqData = [
           "If the Chatbot is unsure, it will suggest next steps or guide you to relevant tools and features within the platform."
       }
     ]
-  }
+  },
 ];
 
 const FAQSection = () => {
   return (
-    <section className="w-full bg-black py-24">
+    <section className="w-full bg-gradient-to-b from-black via-slate-900 to-black py-24">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
