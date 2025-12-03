@@ -14,7 +14,6 @@ const Datatool = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-slate-900 to-black text-white px-4 text-center">
       
-      {/* Animated Heading */}
       <motion.h1
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -39,10 +38,9 @@ const Datatool = () => {
         </motion.span>
       </motion.h1>
 
-      {/* Paragraph */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opaciddddty: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.7 }}
         className="text-lg md:text-xl mb-10 max-w-xl"
       >
